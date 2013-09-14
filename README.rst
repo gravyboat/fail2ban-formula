@@ -32,8 +32,25 @@ Example Pillar:
 
     fail2ban:
       config:
+        name: /etc/fail2ban/fail2ban.conf
+        source: salt://fail2ban/files/redhat_fail2ban.conf
+        user: root
+        group: root
+        mode: 644
+
+``fail2ban.jail``
+-------------------
+
+Manage the fail2ban jail.local file.
+
+Example Pillar:
+
+.. code:: yaml
+
+    fail2ban:
+      jail:
         name: /etc/fail2ban/jail.local
-        source: salt://fail2ban/files/jail.local
+        source: salt://fail2ban/files/redhat_jail.local
         user: root
         group: root
         mode: 644
