@@ -1,4 +1,4 @@
-{% from "fail2ban/mail.jinja" import map with context %}
+{% from "fail2ban/map.jinja" import map with context %}
 
 fail2ban:
   pkg:
