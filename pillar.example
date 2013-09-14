@@ -11,6 +11,8 @@ fail2ban:
     user: root
     group: root
     mode: 644
+
+fail2ban:
   jail:
     tmpl: salt://fail2ban/files/redhat_jail.local
     user: root
