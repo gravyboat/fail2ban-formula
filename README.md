@@ -10,8 +10,29 @@ Install and configure fail2ban and start the service.
 
 
 Available states
+================
 
-----------------
+.. contents::
+    :local:
 
 ``fail2ban``
-    Install the ``fail2ban`` package and enable the service.
+------------
+
+Install the ``fail2ban`` package and enable the service.
+
+``fail2ban.config``
+-------------------
+
+Manage the fail2ban configuration file.
+
+Example Pillar:
+
+.. code:: yaml
+
+    fail2ban:
+      config:
+        name: /etc/fail2ban/jail.local
+        source: salt://fail2ban/files/jail.local
+        user: root
+        group: root
+        mode: 644
