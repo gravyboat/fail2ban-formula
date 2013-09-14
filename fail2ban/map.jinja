@@ -1,12 +1,14 @@
 {% set map = salt['grains.filter_by']({
-	'Debian': {
-		'pkg': 'fail2ban',
-		'service': 'fail2ban',
-		'config': '/etc/fail2ban/jail.local',
-	},
-	'RedHat': {
-		'pkg': 'fail2ban',
-		'service': 'fail2ban',
-		'config': '/etc/fail2ban/jail.local,
-	},
+    'Debian': {
+        'pkg': 'fail2ban',
+        'service': 'fail2ban',
+        'config': '/etc/fail2ban/fail2ban.conf',
+        'jail': '/etc/fail2ban/jail.local',
+    },
+    'RedHat': {
+        'pkg': 'fail2ban',
+        'service': 'fail2ban',
+        'config': '/etc/fail2ban/fail2ban.conf',
+        'jail': '/etc/fail2ban/jail.local',
+    },
 }, merge=salt['pillar.get']('fail2ban:lookip')) %}
