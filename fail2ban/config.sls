@@ -1,7 +1,7 @@
 {% from "fail2ban/map.jinja" import map with context %}
 {% set fail2ban = salt['grains.filter_by']({
-    'Debian': {'conf': 'salt://fail2ban/debian_fail2ban.conf'},
-    'RedHat': {'conf': 'salt://fail2ban/redhat_fail2ban.conf'},
+    'Debian': {'conf': 'salt://fail2ban/debian-fail2ban.conf'},
+    'RedHat': {'conf': 'salt://fail2ban/redhat-fail2ban.conf'},
 }) %}
 
 include:
