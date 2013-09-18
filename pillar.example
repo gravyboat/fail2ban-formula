@@ -7,14 +7,14 @@ fail2ban:
 
 fail2ban:
   config:
-    tmpl: salt://fail2ban/files/redhat_fail2ban.conf
+    tmpl: salt://fail2ban/files/redhat-fail2ban.conf
     user: root
     group: root
     mode: 644
 
 fail2ban:
   jail:
-    tmpl: salt://fail2ban/files/redhat_jail.local
+    tmpl: salt://fail2ban/files/redhat-jail.local
     user: root
     group: root
     mode: 644
