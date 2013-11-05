@@ -1,8 +1,4 @@
 {% from "fail2ban/map.jinja" import map with context %}
-{% set fail2ban = salt['grains.filter_by']({
-    'Debian': {'jail': 'salt://fail2ban/debian-jail.local'},
-    'RedHat': {'jail': 'salt://fail2ban/redhat-jail.local'},
-}) %}
 
 include:
   - fail2ban
@@ -11,7 +7,7 @@ fail2ban_jail:
   file:
     - managed
     - name: {{ map.jail }}
-    - source: {{ salt['pillar.get']('fail2ban:jail:tmpl', {{ fail2ban.jail }}) }}
+    - source: salt://fail2ban/{{ grains['os'] }}-jail.local
     - user: {{ salt['pillar.get']('fail2ban:jail:user', 'root') }}
     - group: {{ salt['pillar.get']('fail2ban:jail:group', 'root') }}
     - mode: {{ salt['pillar.get']('fail2ban:jail:group', '644') }}
